@@ -67,74 +67,74 @@ Below is the structured breakdown of top commercial SaaS AI API platforms, sorte
 
 ## ⚡ Open-Source GitHub Repositories
 
-The open-source AI ecosystem provides production-grade models and inference backends. All repositories are sorted by **GitHub Star Count (Descending)**:
+The open-source AI ecosystem provides production-grade models and inference backends. All repositories are sorted by **GitHub Stars_Count (Descending)**:
 
 ### 🦙 LLM Serving & Local Inference Frameworks
 
-- **[ollama/ollama](https://github.com/ollama/ollama)** <a href="https://github.com/ollama/ollama/stargazers"><img src="https://img.shields.io/github/stars/ollama/ollama?style=social" alt="GitHub stars"/></a>
+- **[ollama/ollama](https://github.com/ollama/ollama)** <a href="https://github.com/ollama/ollama/stargazers"><img src="https://img.shields.io/github/stars/ollama/ollama?style=social" alt="GitHub_Stars"/></a>
   - **The simplest tool to get up and running with LLMs locally.** MIT licensed, Go backend. Bundles GGUF quantization, single-binary distribution, OpenAI-compatible API, and active model registry (DeepSeek, Llama, Kimi).
 
-- **[ggerganov/llama.cpp](https://github.com/ggerganov/llama.cpp)** <a href="https://github.com/ggerganov/llama.cpp/stargazers"><img src="https://img.shields.io/github/stars/ggerganov/llama.cpp?style=social" alt="GitHub stars"/></a>
+- **[ggerganov/llama.cpp](https://github.com/ggerganov/llama.cpp)** <a href="https://github.com/ggerganov/llama.cpp/stargazers"><img src="https://img.shields.io/github/stars/ggerganov/llama.cpp?style=social" alt="GitHub_Stars"/></a>
   - **High-performance C/C++ LLM inference engine.** MIT licensed. Powers edge hardware, CPU/GPU hybrid offloading, Metal/CUDA acceleration, GGML/GGUF quantization formats.
 
-- **[vllm-project/vllm](https://github.com/vllm-project/vllm)** <a href="https://github.com/vllm-project/vllm/stargazers"><img src="https://img.shields.io/github/stars/vllm-project/vllm?style=social" alt="GitHub stars"/></a>
+- **[vllm-project/vllm](https://github.com/vllm-project/vllm)** <a href="https://github.com/vllm-project/vllm/stargazers"><img src="https://img.shields.io/github/stars/vllm-project/vllm?style=social" alt="GitHub_Stars"/></a>
   - **The leading high-throughput open-source LLM serving engine.** Apache-2.0 licensed. Features **PagedAttention**, continuous batching, multi-LoRA serving, multi-GPU tensor parallelism. Delivers 30-40% higher throughput under high concurrency.
 
-- **[lm-sys/FastChat](https://github.com/lm-sys/FastChat)** <a href="https://github.com/lm-sys/FastChat/stargazers"><img src="https://img.shields.io/github/stars/lm-sys/FastChat?style=social" alt="GitHub stars"/></a>
+- **[lm-sys/FastChat](https://github.com/lm-sys/FastChat)** <a href="https://github.com/lm-sys/FastChat/stargazers"><img src="https://img.shields.io/github/stars/lm-sys/FastChat?style=social" alt="GitHub_Stars"/></a>
   - **An open platform for training, serving, and evaluating LLM chatbots.** Apache-2.0 licensed. Powers LMSYS Chatbot Arena with multi-model distributed serving.
 
-- **[sgl-project/sglang](https://github.com/sgl-project/sglang)** <a href="https://github.com/sgl-project/sglang/stargazers"><img src="https://img.shields.io/github/stars/sgl-project/sglang?style=social" alt="GitHub stars"/></a>
+- **[sgl-project/sglang](https://github.com/sgl-project/sglang)** <a href="https://github.com/sgl-project/sglang/stargazers"><img src="https://img.shields.io/github/stars/sgl-project/sglang?style=social" alt="GitHub_Stars"/></a>
   - **Fast execution engine for LLMs and vision-language models.** Apache-2.0 licensed. High-performance RadixAttention KV cache reuse, structured output decoding, deep optimization for complex multi-turn workflows.
 
-- **[huggingface/text-generation-inference](https://github.com/huggingface/text-generation-inference)** <a href="https://github.com/huggingface/text-generation-inference/stargazers"><img src="https://img.shields.io/github/stars/huggingface/text-generation-inference?style=social" alt="GitHub stars"/></a>
+- **[huggingface/text-generation-inference](https://github.com/huggingface/text-generation-inference)** <a href="https://github.com/huggingface/text-generation-inference/stargazers"><img src="https://img.shields.io/github/stars/huggingface/text-generation-inference?style=social" alt="GitHub_Stars"/></a>
   - **Hugging Face's enterprise LLM serving toolkit.** Apache-2.0 licensed. Features Rust scheduling, OpenTelemetry tracing, bitsandbytes quantization, SSE token streaming.
 
 ---
 
 ### 🗣️ Speech Recognition (ASR) & Voice Synthesis (TTS)
 
-- **[ggerganov/whisper.cpp](https://github.com/ggerganov/whisper.cpp)** <a href="https://github.com/ggerganov/whisper.cpp/stargazers"><img src="https://img.shields.io/github/stars/ggerganov/whisper.cpp?style=social" alt="GitHub stars"/></a>
+- **[ggerganov/whisper.cpp](https://github.com/ggerganov/whisper.cpp)** <a href="https://github.com/ggerganov/whisper.cpp/stargazers"><img src="https://img.shields.io/github/stars/ggerganov/whisper.cpp?style=social" alt="GitHub_Stars"/></a>
   - **High-performance C/C++ port of OpenAI Whisper.** MIT licensed. Light footprint, cross-platform execution on iOS, Android, macOS Metal, Linux, and Windows edge devices.
 
-- **[RVC-Boss/GPT-SoVITS](https://github.com/RVC-Boss/GPT-SoVITS)** <a href="https://github.com/RVC-Boss/GPT-SoVITS/stargazers"><img src="https://img.shields.io/github/stars/RVC-Boss/GPT-SoVITS?style=social" alt="GitHub stars"/></a>
+- **[RVC-Boss/GPT-SoVITS](https://github.com/RVC-Boss/GPT-SoVITS)** <a href="https://github.com/RVC-Boss/GPT-SoVITS/stargazers"><img src="https://img.shields.io/github/stars/RVC-Boss/GPT-SoVITS?style=social" alt="GitHub_Stars"/></a>
   - **Powerful zero-shot & few-shot TTS voice cloning framework.** MIT licensed. Requires only 5 seconds of audio reference for cross-lingual voice synthesis and emotion transfer.
 
-- **[coqui-ai/TTS](https://github.com/coqui-ai/TTS)** <a href="https://github.com/coqui-ai/TTS/stargazers"><img src="https://img.shields.io/github/stars/coqui-ai/TTS?style=social" alt="GitHub stars"/></a>
+- **[coqui-ai/TTS](https://github.com/coqui-ai/TTS)** <a href="https://github.com/coqui-ai/TTS/stargazers"><img src="https://img.shields.io/github/stars/coqui-ai/TTS?style=social" alt="GitHub_Stars"/></a>
   - **Deep learning toolkit for Text-to-Speech synthesis.** MPL-2.0 licensed. Includes XTTS-v2 for multi-speaker voice cloning in 16+ languages (community-maintained fork).
 
-- **[OpenBMB/VoxCPM](https://github.com/OpenBMB/VoxCPM)** <a href="https://github.com/OpenBMB/VoxCPM/stargazers"><img src="https://img.shields.io/github/stars/OpenBMB/VoxCPM?style=social" alt="GitHub stars"/></a>
+- **[OpenBMB/VoxCPM](https://github.com/OpenBMB/VoxCPM)** <a href="https://github.com/OpenBMB/VoxCPM/stargazers"><img src="https://img.shields.io/github/stars/OpenBMB/VoxCPM?style=social" alt="GitHub_Stars"/></a>
   - **Multilingual TTS & Voice Design engine.** Apache-2.0 licensed. Supports 30 languages + 9 Chinese dialects, prompt-driven voice design, 48kHz output, low 1.68% WER.
 
-- **[SYSTRAN/faster-whisper](https://github.com/SYSTRAN/faster-whisper)** <a href="https://github.com/SYSTRAN/faster-whisper/stargazers"><img src="https://img.shields.io/github/stars/SYSTRAN/faster-whisper?style=social" alt="GitHub stars"/></a>
+- **[SYSTRAN/faster-whisper](https://github.com/SYSTRAN/faster-whisper)** <a href="https://github.com/SYSTRAN/faster-whisper/stargazers"><img src="https://img.shields.io/github/stars/SYSTRAN/faster-whisper?style=social" alt="GitHub_Stars"/></a>
   - **Production-standard speech recognition with CTranslate2 engine.** MIT licensed. Re-implemented OpenAI Whisper with up to 4x speedup, 8-bit quantization, 3.12% WER.
 
-- **[m-bain/whisperX](https://github.com/m-bain/whisperX)** <a href="https://github.com/m-bain/whisperX/stargazers"><img src="https://img.shields.io/github/stars/m-bain/whisperX?style=social" alt="GitHub stars"/></a>
+- **[m-bain/whisperX](https://github.com/m-bain/whisperX)** <a href="https://github.com/m-bain/whisperX/stargazers"><img src="https://img.shields.io/github/stars/m-bain/whisperX?style=social" alt="GitHub_Stars"/></a>
   - **Whisper speech recognition with word-level alignment & speaker diarization.** MIT licensed. Features PyAnnote speaker identification for complex multi-speaker audio.
 
 ---
 
 ### 🖼️ Computer Vision, Image & Video Processing
 
-- **[huggingface/transformers](https://github.com/huggingface/transformers)** <a href="https://github.com/huggingface/transformers/stargazers"><img src="https://img.shields.io/github/stars/huggingface/transformers?style=social" alt="GitHub stars"/></a>
+- **[huggingface/transformers](https://github.com/huggingface/transformers)** <a href="https://github.com/huggingface/transformers/stargazers"><img src="https://img.shields.io/github/stars/huggingface/transformers?style=social" alt="GitHub_Stars"/></a>
   - **State-of-the-art Machine Learning library for PyTorch, TensorFlow, and JAX.** Apache-2.0 licensed. Unified API for vision models (ViT, DETR, SAM), LLMs, and audio pipeline execution.
 
-- **[AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui)** <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/stargazers"><img src="https://img.shields.io/github/stars/AUTOMATIC1111/stable-diffusion-webui?style=social" alt="GitHub stars"/></a>
+- **[AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui)** <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/stargazers"><img src="https://img.shields.io/github/stars/AUTOMATIC1111/stable-diffusion-webui?style=social" alt="GitHub_Stars"/></a>
   - **Modular browser interface for Stable Diffusion models.** AGPL-3.0 licensed. Advanced image generation, upscaling, inpainting, ControlNet, and custom REST API endpoints.
 
-- **[comfyanonymous/ComfyUI](https://github.com/comfyanonymous/ComfyUI)** <a href="https://github.com/comfyanonymous/ComfyUI/stargazers"><img src="https://img.shields.io/github/stars/comfyanonymous/ComfyUI?style=social" alt="GitHub stars"/></a>
+- **[comfyanonymous/ComfyUI](https://github.com/comfyanonymous/ComfyUI)** <a href="https://github.com/comfyanonymous/ComfyUI/stargazers"><img src="https://img.shields.io/github/stars/comfyanonymous/ComfyUI?style=social" alt="GitHub_Stars"/></a>
   - **Modular node-based GUI & backend engine for Stable Diffusion & Flux.** GPL-3.0 licensed. Asynchronous execution graph, custom API pipelines, low VRAM optimization.
 
-- **[Anishrkhadka/restore-lab](https://github.com/Anishrkhadka/restore-lab)** <a href="https://github.com/Anishrkhadka/restore-lab/stargazers"><img src="https://img.shields.io/github/stars/Anishrkhadka/restore-lab?style=social" alt="GitHub stars"/></a>
+- **[Anishrkhadka/restore-lab](https://github.com/Anishrkhadka/restore-lab)** <a href="https://github.com/Anishrkhadka/restore-lab/stargazers"><img src="https://img.shields.io/github/stars/Anishrkhadka/restore-lab?style=social" alt="GitHub_Stars"/></a>
   - **GPU-accelerated restoration workbench for images and video.** Spatial 4x upscaling with Real-ESRGAN, GFPGAN face enhancement, NVENC encoding pipeline.
 
-- **[Motasaith/ai-image-restorer](https://github.com/Motasaith/ai-image-restorer)** <a href="https://github.com/Motasaith/ai-image-restorer/stargazers"><img src="https://img.shields.io/github/stars/Motasaith/ai-image-restorer?style=social" alt="GitHub stars"/></a>
+- **[Motasaith/ai-image-restorer](https://github.com/Motasaith/ai-image-restorer)** <a href="https://github.com/Motasaith/ai-image-restorer/stargazers"><img src="https://img.shields.io/github/stars/Motasaith/ai-image-restorer?style=social" alt="GitHub_Stars"/></a>
   - **Production-grade AI image restoration engine.** Real-ESRGAN super resolution, GFPGAN face restoration, async queue microservices, dual-port REST API & dashboard.
 
 ---
 
 ### 🤖 AI Applications & Orchestration Interfaces
 
-- **[open-webui/open-webui](https://github.com/open-webui/open-webui)** <a href="https://github.com/open-webui/open-webui/stargazers"><img src="https://img.shields.io/github/stars/open-webui/open-webui?style=social" alt="GitHub stars"/></a>
+- **[open-webui/open-webui](https://github.com/open-webui/open-webui)** <a href="https://github.com/open-webui/open-webui/stargazers"><img src="https://img.shields.io/github/stars/open-webui/open-webui?style=social" alt="GitHub_Stars"/></a>
   - **User-friendly AI web interface for local & cloud models.** MIT licensed. Built-in RAG document parsing, RBAC user permissions, OpenAI API compatibility, offline operation.
 
 ---
@@ -165,7 +165,7 @@ Contributions are welcome! Please follow these simple steps:
 
 1. **Fork** the repository on GitHub.
 2. Edit `README.md` to add new SaaS platforms or open-source inference repositories.
-3. Ensure entries include clear description, links, specific pricing, and valid open-source star badges.
+3. Ensure entries include clear description, links, specific pricing, and valid open-source Stars_Badges.
 4. Submit a **Pull Request** with a brief summary of additions.
 
 For more awesome open-source curations, check out [Awesome-Awesome-Awesome](https://github.com/ishandutta2007/Awesome-Awesome-Awesome)! ⭐
