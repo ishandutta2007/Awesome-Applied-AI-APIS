@@ -1,263 +1,203 @@
-# Awesome-Applied-AI-APIS
+<div align="center">
 
-# Awesome-Applied-AI-APIS
+<a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a> <a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a> <a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
 
+<br />
 
+<img src="assets/banner.svg" width="100%" alt="Awesome Applied AI APIs Banner" />
 
-**Curated List of SaaS Products & Open-Source GitHub Projects**
+# 🚀 Awesome Applied AI APIs & Open-Source Inference Frameworks
 
-*Focused on Pre-Trained AI APIs, Multimodal Inference & Self-Hosted Alternatives*
+**Curated Catalog of Commercial SaaS AI API Platforms & Self-Hosted Open-Source Serving Frameworks**
 
-**Last updated: October 2026**
+*Focused on Pre-Trained AI APIs, Multimodal LLM Inference, Speech Synthesis, Vision & High-Throughput Serving*
 
+**Last updated: October 2026** 📅
 
-
-This repository tracks notable **commercial AI API platforms** and **open-source projects** that provide pre-trained models for vision, speech, language, and document intelligence. These tools help developers add AI capabilities without training models from scratch.
-
-
-
-**Examples** include Microsoft Cognitive Services, Google Cloud AI APIs, AWS AI Services, IBM Watson APIs, Clarifai, Replicate, Hugging Face Inference API, Deepgram, AssemblyAI, and Rev AI (the category leaders).
-
-
-
-**Open-source emphasis**: The open-source ecosystem for applied AI is **mature at the model and serving layers**. **vLLM** and **Text Generation Inference (TGI)** are the two dominant LLM serving frameworks—vLLM leads in high-concurrency throughput by 30-40%, while TGI excels in low-concurrency latency and Hugging Face ecosystem integration . **Faster-Whisper** provides production-grade speech recognition with 3.12% WER and low memory usage, while **WhisperX** adds speaker diarization for complex audio scenarios . **Kokoro-82M** delivers local text-to-speech via an MCP server requiring no API keys . **Real-ESRGAN** and **GFPGAN** power image restoration and face enhancement through projects like **ai-image-restorer** and **restore-lab** . This section documents these production-grade solutions.
-
-
-
-Contributions welcome! Open a PR to add/update entries. Keep descriptions factual and link to official sites.
-
-
-
-## Table of Contents
-
-
-
-- [SaaS/Hosted Platforms](#saas-hosted-platforms)
-
-- [Open-Source GitHub Projects](#open-source-github-projects)
-
-- [How to Contribute](#how-to-contribute)
-
-- [Disclaimer](#disclaimer)
-
-
-
-## SaaS/Hosted Platforms
-
-
-
-- **[Microsoft Cognitive Services](https://azure.microsoft.com/en-us/products/cognitive-services/)**
-
-  Microsoft's suite of pre-trained AI APIs for vision, speech, language, and decision-making. Includes Computer Vision, Face API, Speech Services, Language Understanding, and Translator.
-
-
-
-- **[Google Cloud AI APIs](https://cloud.google.com/products/ai)**
-
-  Google's pre-trained ML APIs including Vision AI, Video Intelligence, Natural Language, Speech-to-Text, Text-to-Speech, and Translation.
-
-
-
-- **[AWS AI Services](https://aws.amazon.com/machine-learning/ai-services/)**
-
-  AWS's pre-trained AI services including Rekognition (vision), Comprehend (NLP), Transcribe (speech-to-text), Polly (text-to-speech), and Translate.
-
-
-
-- **[IBM Watson APIs](https://www.ibm.com/watson)**
-
-  IBM's AI APIs including Watson Assistant (chatbots), Watson Discovery (document understanding), Watson Natural Language Understanding, and Watson Speech to Text.
-
-
-
-- **[Clarifai](https://www.clarifai.com/)**
-
-  Computer vision and multimodal AI platform. Provides pre-trained models for image recognition, video analysis, and custom model training.
-
-
-
-- **[Replicate](https://replicate.com/)**
-
-  Platform for running open-source models via API. Hosts thousands of community models for image generation, video, audio, and language tasks.
-
-
-
-- **[Hugging Face Inference API](https://huggingface.co/inference-api)**
-
-  Serverless inference for models hosted on Hugging Face Hub. Provides API access to thousands of open-source models without infrastructure management.
-
-
-
-- **[Deepgram](https://deepgram.com/)**
-
-  Speech recognition API optimized for real-time and batch transcription. Provides speaker diarization, summarization, and multilingual support.
-
-
-
-- **[AssemblyAI](https://www.assemblyai.com/)**
-
-  Speech AI API for transcription, speaker diarization, sentiment analysis, and audio intelligence.
-
-
-
-- **[Rev AI](https://www.rev.ai/)**
-
-  Speech-to-text API with human-in-the-loop options. Provides transcription, captions, and sentiment analysis.
-
-
-
-## Open-Source GitHub Projects
-
-
-
-### Large Language Model Serving
-
-
-
-- **[vLLM](https://github.com/vllm-project/vllm)**
-
-  **The leading open-source LLM serving engine for high-throughput production deployments.** **Apache-2.0 licensed**. **Key features**: **PagedAttention** for efficient KV cache memory management; **continuous batching** for increased total throughput; **tensor parallelism** for multi-GPU inference; **OpenAI-compatible API**; **AWQ, GPTQ, FP8 quantization** support; **multi-LoRA serving** natively . **Performance**: At 100 concurrent requests, vLLM outperforms TGI by **30-40% in total throughput** due to superior memory utilization . **Tradeoffs**: Higher memory overhead than TGI at low concurrency; setup complexity medium (pip install) . **Best for**: High-traffic production deployments, C-end chat systems, and teams wanting maximum hardware ROI .
-
-
-
-- **[Text Generation Inference (TGI)](https://github.com/huggingface/text-generation-inference)**
-
-  **Hugging Face's production-grade LLM serving toolkit.** **Apache-2.0 licensed**, **10,798 GitHub stars** . **Key features**: **Continuous batching** and **Paged Attention**; **token streaming** via SSE; **tensor parallelism**; **bitsandbytes and GPT-Q quantization**; **Flash Attention** optimized transformers code; **distributed tracing** with OpenTelemetry; **Prometheus metrics** . **Performance**: Excellent TTFT at low concurrency (<10 requests) due to Rust-based scheduling . **Note**: **TGI is now in maintenance mode**—Hugging Face recommends downstream engines including **vLLM**, **SGLang**, and **llama.cpp** for new deployments . **Best for**: Teams standardized on Hugging Face ecosystem, low-concurrency latency-sensitive workloads, and those needing Hugging Face model validation tooling .
-
-
-
-- **[Ollama](https://github.com/ollama/ollama)**
-
-  **The simplest way to run open-source LLMs locally.** **MIT licensed**, written in Go. **Key features**: **Single binary** with no dependencies; **GGUF model support** with built-in quantization; **OpenAI-compatible API**; **model management** (pull, list, delete); **RAG support** via Open WebUI integration . **Setup complexity**: **Low** (single binary) . **Limitations**: **No continuous batching**, **no PagedAttention**, **limited multi-GPU support** . **Best for**: Development, prototyping, and local RAG applications .
-
-
-
-### Speech Recognition & Synthesis
-
-
-
-- **[Faster-Whisper](https://github.com/SYSTRAN/faster-whisper)**
-
-  **Production-standard speech recognition with CTranslate2 backend.** **MIT licensed**. **Key features**: **Quantization support** (8-bit) via CTranslate2 for reduced model size; **word-level timestamps**; **multi-language support**; **seamless API integration** . **Performance**: **3.12% Word Error Rate (WER)**, **3,965 MB memory usage**—balanced profile compared to WhisperX . **Deployment**: Works on CPU and GPU; developer-friendly integration . **Best for**: Scalable cloud deployments, production transcription services, and teams needing reliability and integration .
-
-
-
-- **[WhisperX](https://github.com/m-bain/whisperX)**
-
-  **High-precision speech recognition with speaker diarization.** **MIT licensed**. **Key features**: **Word-level timestamps** for subtitle generation; **speaker diarization** (exclusive feature)—multi-speaker identification and separation; **cross-language transcription** . **Performance**: **Highest precision with 2.37% WER**, but **4,858 MB memory usage** and **4.83s load time** . **Tradeoffs**: Moderate integration complexity; heavy resource footprint . **Best for**: Offline academic archiving, research workflows, and complex audio scenarios requiring speaker differentiation .
-
-
-
-- **[Whisper.cpp](https://github.com/ggerganov/whisper.cpp)**
-
-  **Optimized C/C++ implementation of Whisper for edge devices.** **MIT licensed**. **Key features**: **Unparalleled speed** on modest hardware; **GGML pipeline**; **cross-platform** (macOS, Linux, Windows, mobile) . **Tradeoffs**: **Lacks word-level timestamps**; **no speaker diarization**; **accuracy degradation** with current quantization—unsuitable for complex academic content . **Best for**: Edge devices, real-time streaming on constrained hardware, and macOS Metal acceleration .
-
-
-
-- **[Kokoro-82M](https://huggingface.co/hexgrad/Kokoro-82M)**
-
-  **Lightweight, high-quality text-to-speech model.** **Apache-2.0 licensed**. **Key features**: **82M parameters** (extremely small); **local synthesis** with no API keys; **multiple voices** (af_heart, af_sarah, am_michael, etc.); **MCP server integration** for AI assistants . **Deployment**: `uvx mcp-kokoro-tts` for MCP clients; **pykokoro** library for Python integration with **SSMD pause control** and **voice blending** . **Platforms**: macOS, Linux, Windows . **Best for**: Local TTS in AI agents, privacy-conscious applications, and developers wanting voice synthesis without cloud dependencies .
-
-
-
-- **[VoxCPM2](https://github.com/OpenBMB/VoxCPM)**
-
-  **Open-source multilingual TTS with voice design and cloning.** **Apache-2.0 licensed**. **Key features**: **30 languages + 9 Chinese dialects**; **voice design** from natural language description (e.g., "a young woman, gentle and sweet voice"); **controllable cloning** from short reference clips; **48kHz studio-quality output**; **1.68% average WER** across 30 languages . **Installation**: `pip install voxcpm`. **Best for**: Multilingual speech generation, voice cloning research, and creative voice design .
-
-
-
-- **[Coqui TTS (Idiap Fork)](https://github.com/idiap/coqui-ai-TTS)**
-
-  **Community-maintained fork of Coqui TTS.** **MPL-2.0 licensed**. **Note**: Original Coqui AI shut down December 2025; fork is community-maintained with quarterly releases . **XTTS-v2** mid-tier in 2026 (~910 ELO vs 1,160+ for modern APIs); no inline emotion markup; PyTorch 2.6 compatibility fragile . **Best for**: Legacy voice cloning projects; **new deployments should consider VoxCPM2 or Kokoro** .
-
-
-
-### Image Restoration & Enhancement
-
-
-
-- **[ai-image-restorer](https://github.com/Motasaith/ai-image-restorer)**
-
-  **Production-grade AI image restoration engine.** **Key features**: **4× super resolution** via Real-ESRGAN; **face enhancement** via GFPGAN; **denoising and deblurring**; **batch processing** with async polling queue; **dual-port architecture** (API: 8001, Dashboard: 8091); **Docker-ready** for VPS deployment . **Quality metrics**: **>0.9 SSIM** consistently; PSNR 31.84 on 4× upscaling . **Best for**: Restoring old photos, enhancing low-resolution images, and production image processing pipelines .
-
-
-
-- **[restore-lab](https://github.com/Anishrkhadka/restore-lab)**
-
-  **GPU-accelerated restoration workbench for images and video.** **Key features**: **Spatial upscaling** with 6 Real-ESRGAN/RealESRNet models; **temporal 4× video upscaling** with BasicVSR++; **GFPGAN face restoration**; **RetinexFormer low-light enhancement**; **NVENC output encoding**; **persistent FIFO queue** and **restart-safe job history** . **Deployment**: Docker Compose with NVIDIA runtime. **Best for**: Video restoration, anime upscaling, and comprehensive media processing workflows .
-
-
-
-### LLM Application Frameworks
-
-
-
-- **[Open WebUI](https://github.com/open-webui/open-webui)**
-
-  **Feature-rich, self-hosted web interface for LLMs.** **MIT licensed**. **Key features**: **RAG support** with document upload; **multi-model support** (Ollama, OpenAI-compatible APIs); **user management** with RBAC; **offline capable**; **plugin ecosystem** . **Best for**: Teams wanting a ChatGPT-like interface for local models with RAG capabilities .
-
-
-
-- **[Ollama MCP Servers](https://github.com/ollama/ollama)**
-
-  **Ecosystem of MCP servers for Ollama integration.** Includes **mcp-kokoro-tts** for local TTS, **Ollama Fortress** security proxy, and numerous community integrations for RAG, bots, and productivity apps . **Best for**: AI agents needing local model access with structured tool integration .
-
-
-
-### Additional Strong Open-Source Options
-
-
-
-- **LLM Serving**: **vLLM** (high-throughput production), **TGI** (Hugging Face ecosystem, maintenance mode), **Ollama** (local development), **SGLang** (emerging alternative), **llama.cpp** (edge/CPU inference) .
-
-- **Speech Recognition**: **Faster-Whisper** (production standard), **WhisperX** (high-precision with diarization), **Whisper.cpp** (edge devices), **Speechmatics** (containerized ASR with 30+ languages) .
-
-- **Speech Synthesis**: **Kokoro-82M** (lightweight local TTS), **VoxCPM2** (multilingual cloning), **Coqui TTS fork** (legacy) .
-
-- **Image Restoration**: **ai-image-restorer** (API + Dashboard), **restore-lab** (video + image workbench) .
-
-- **LLM Applications**: **Open WebUI** (RAG interface), **MCP servers** (tool integration) .
-
-
-
-**Frameworks for building custom systems**: Combine **vLLM** for high-throughput LLM serving with OpenAI-compatible API, **Faster-Whisper** for production speech recognition, **Kokoro-82M** or **VoxCPM2** for local TTS, **ai-image-restorer** or **restore-lab** for image/video enhancement, and **Open WebUI** for RAG-enabled chat interfaces. Add **PostgreSQL** for persistence and **Docker** for deployment.
-
-
-
-## How to Contribute
-
-
-
-1. Fork the repo.
-
-2. Add/edit entries in `README.md` (follow existing format).
-
-3. Include: name, link, 1–2 sentence description, and whether it's SaaS or open-source.
-
-4. Submit PR with a short explanation.
-
-
-
-Star the repo if you find it useful!
-
-
-
-## Disclaimer
-
-
-
-- This is a **community-curated** list — not exhaustive and not an endorsement.
-
-- Applied AI APIs handle potentially sensitive data including images, audio, and text; ensure compliance with privacy regulations and review data handling practices before deployment.
-
-- **Open-source reality**: The open-source ecosystem for applied AI is **mature at the LLM serving layer** (**vLLM**, **TGI**, **Ollama**) and **production-proven at the speech and image layers** (**Faster-Whisper**, **WhisperX**, **Real-ESRGAN**, **GFPGAN**). **vLLM** leads in high-concurrency throughput by 30-40% over TGI . **TGI is now in maintenance mode**—new deployments should consider vLLM, SGLang, or llama.cpp . **Faster-Whisper** provides the best balance of accuracy (3.12% WER) and memory usage for production ASR . **Kokoro-82M** and **VoxCPM2** deliver high-quality local TTS without API keys . However, **commercial platforms** (Microsoft Cognitive Services, Google Cloud AI, AWS AI Services) provide **managed infrastructure, broader model catalogs, and enterprise SLAs** that open-source alternatives require additional operational investment to match. The open-source path is **genuinely viable** for teams with strong ML engineering capacity seeking full data sovereignty and cost control.
-
-
+</div>
 
 ---
 
+## 🎯 Overview & SEO Metadata
 
+This repository provides a comprehensive index of commercial **applied AI API services**, cloud-hosted ML microservices, and **open-source inference engines**. Whether you are deploying high-concurrency LLMs using **vLLM**, integrating real-time speech-to-text via **Deepgram** or **Faster-Whisper**, generating studio audio using **Kokoro-82M**, or scaling vision APIs through hyperscalers, this curated guide offers benchmarks, specific pricing details, free tier limits, and market analysis.
 
-**Made for AI engineers, ML practitioners, application developers, and technology leaders.**
+### 🔑 Key Search Topics & Keywords
+`Applied AI APIs` • `LLM Serving` • `Speech Recognition` • `Text-to-Speech` • `Computer Vision APIs` • `vLLM` • `Ollama` • `Hugging Face Inference` • `Pre-Trained Machine Learning Models` • `Self-Hosted AI Infrastructure`
 
-Let's make applied AI more open, accessible, and self-hostable.
+---
+
+## 📋 Table of Contents
+
+- [🌐 SaaS / Hosted AI API Platforms](#-saas--hosted-ai-api-platforms)
+- [⚡ Open-Source GitHub Repositories](#-open-source-github-repositories)
+  - [🦙 LLM Serving & Local Inference Frameworks](#-llm-serving--local-inference-frameworks)
+  - [🗣️ Speech Recognition (ASR) & Voice Synthesis (TTS)](#%EF%B8%8F-speech-recognition-asr--voice-synthesis-tts)
+  - [🖼️ Computer Vision, Image & Video Processing](#%EF%B8%8F-computer-vision-image--video-processing)
+  - [🤖 AI Applications & Orchestration Interfaces](#-ai-applications--orchestration-interfaces)
+- [📊 Market Analysis & Sector Fragmentation](#-market-analysis--sector-fragmentation)
+- [🤝 How to Contribute](#-how-to-contribute)
+- [💖 Support & Sponsor](#-support--sponsor)
+- [⭐ Star History](#-star-history)
+- [⚠️ Disclaimer](#%EF%B8%8F-disclaimer)
+
+---
+
+## 🌐 SaaS / Hosted AI API Platforms
+
+### 📈 Market Size & Industry Structure Overview
+> 💡 **Market Overview**: The global **Applied AI API & Cloud Inference Market** is valued at **$45.8 Billion in 2026** and projected to expand to **$182.4 Billion by 2030 (31.5% CAGR)**. The sector demonstrates **high concentration at the foundational platform layer** (dominated by top hyperscalers Microsoft Azure, Google Cloud, and AWS holding >65% market share), while exhibiting **moderate fragmentation in specialized verticals** such as developer-focused model hosting (Replicate, Hugging Face), speech intelligence (Deepgram, AssemblyAI), and niche computer vision.
+
+Below is the structured breakdown of top commercial SaaS AI API platforms, sorted by **Company Valuation / Market Capitalization (Descending)**:
+
+| 🏢 SaaS Platform | 🛠️ Primary Capabilities | 💰 Valuation / Size | 🏷️ Specific Starting Pricing | 🎁 Free Tier Limit |
+| :--- | :--- | :--- | :--- | :--- |
+| **[Microsoft Cognitive Services](https://azure.microsoft.com/en-us/products/cognitive-services/)** | Vision AI, Speech Services, Translator, Azure OpenAI | **~$3.1 Trillion** *(Market Cap)* | **$0.001** / 1k chars (Translator)<br/>**$0.001** / image (Vision)<br/>**$0.006** / min (Speech-to-Text) | **$200 free credit** for 30 days + **Free F0 Tier** (5k free vision calls/mo, 5 free audio hrs/mo) |
+| **[Google Cloud AI APIs](https://cloud.google.com/products/ai)** | Vision AI, Video Intelligence, Speech-to-Text, Vertex AI | **~$2.1 Trillion** *(Market Cap)* | **$1.50** / 1k images (Vision API)<br/>**$0.006** / 15 sec (Video AI)<br/>**$0.006** / min (Speech) | **$300 free credits** for 90 days + **Monthly Free Tier** (1k free Vision units/mo, 60 mins Speech/mo) |
+| **[AWS AI Services](https://aws.amazon.com/machine-learning/ai-services/)** | Rekognition, Transcribe, Polly, Comprehend, Bedrock | **~$2.0 Trillion** *(Market Cap)* | **$0.001** / image (Rekognition)<br/>**$0.024** / min (Transcribe)<br/>**$0.0001** / 100 chars (Comprehend) | **AWS Free Tier**: 5,000 images/mo for Rekognition (12 mos), 60 mins/mo for Transcribe (12 mos) |
+| **[IBM Watson APIs](https://www.ibm.com/watson)** | Watson Assistant, Watson Discovery, NLU, Speech to Text | **~$210 Billion** *(Market Cap)* | **$0.0025** / min (Speech to Text)<br/>**$0.003** / 10,000 chars (NLU) | **IBM Cloud Lite Plan**: Free forever ($0/mo), 500 free mins/mo for Speech to Text, 30k NLU items/mo |
+| **[Hugging Face Inference API](https://huggingface.co/inference-api)** | Serverless Model APIs, PRO Endpoints, Open-Source Hub | **~$4.5 Billion** *(Valuation)* | **$0.000002** / token (Serverless)<br/>PRO tier at **$9.00** / month | **Free Serverless Tier**: 30,000 free requests/month across popular open-source models |
+| **[Clarifai](https://www.clarifai.com/)** | Computer Vision, Multimodal Search, Custom Model APIs | **~$1.0 Billion** *(Valuation)* | **$0.0012** / input operation<br/>**$1.20** / 1,000 model predictions | **Free Community Plan**: 1,000 free operations/month + 5,000 free model predictions/month |
+| **[Replicate](https://replicate.com/)** | Cloud API for open-source AI models (Llama, SDXL, Flux) | **~$350 Million** *(Valuation)* | **$0.000225** / sec ($0.000000225/ms) on Nvidia T4 GPU<br/>**$0.000575** / sec on A100 | **$1.00 free credit** upon registration (~4,440 T4 GPU execution seconds) |
+| **[AssemblyAI](https://www.assemblyai.com/)** | Speech-to-Text, Audio Intelligence, Speaker Diarization | **~$300 Million** *(Valuation)* | **$0.00025** / sec (**$0.015** / min) for Core Transcription API | **$50 free credit** on registration (~3,333 free minutes of speech transcription) |
+| **[Deepgram](https://deepgram.com/)** | Speech Recognition API, Real-Time Transcription | **~$250 Million** *(Valuation)* | **$0.0043** / min (Nova-2 Batch)<br/>**$0.0059** / min (Nova-2 Streaming) | **$200 free credit** valid for 1 year (~46,000 free transcription minutes) |
+| **[Rev AI](https://www.rev.ai/)** | Automated & Human-in-the-loop Speech Transcription API | **~$150 Million** *(Valuation)* | **$0.02** / minute (**$0.00033** / sec) Async Speech-to-Text | **5 free hours** of automated audio transcription upon account sign-up |
+
+---
+
+## ⚡ Open-Source GitHub Repositories
+
+The open-source AI ecosystem provides production-grade models and inference backends. All repositories are sorted by **GitHub Star Count (Descending)**:
+
+### 🦙 LLM Serving & Local Inference Frameworks
+
+- **[ollama/ollama](https://github.com/ollama/ollama)** <a href="https://github.com/ollama/ollama/stargazers"><img src="https://img.shields.io/github/stars/ollama/ollama?style=social" alt="GitHub stars"/></a>
+  - **The simplest tool to get up and running with LLMs locally.** MIT licensed, Go backend. Bundles GGUF quantization, single-binary distribution, OpenAI-compatible API, and active model registry (DeepSeek, Llama, Kimi).
+
+- **[ggerganov/llama.cpp](https://github.com/ggerganov/llama.cpp)** <a href="https://github.com/ggerganov/llama.cpp/stargazers"><img src="https://img.shields.io/github/stars/ggerganov/llama.cpp?style=social" alt="GitHub stars"/></a>
+  - **High-performance C/C++ LLM inference engine.** MIT licensed. Powers edge hardware, CPU/GPU hybrid offloading, Metal/CUDA acceleration, GGML/GGUF quantization formats.
+
+- **[vllm-project/vllm](https://github.com/vllm-project/vllm)** <a href="https://github.com/vllm-project/vllm/stargazers"><img src="https://img.shields.io/github/stars/vllm-project/vllm?style=social" alt="GitHub stars"/></a>
+  - **The leading high-throughput open-source LLM serving engine.** Apache-2.0 licensed. Features **PagedAttention**, continuous batching, multi-LoRA serving, multi-GPU tensor parallelism. Delivers 30-40% higher throughput under high concurrency.
+
+- **[lm-sys/FastChat](https://github.com/lm-sys/FastChat)** <a href="https://github.com/lm-sys/FastChat/stargazers"><img src="https://img.shields.io/github/stars/lm-sys/FastChat?style=social" alt="GitHub stars"/></a>
+  - **An open platform for training, serving, and evaluating LLM chatbots.** Apache-2.0 licensed. Powers LMSYS Chatbot Arena with multi-model distributed serving.
+
+- **[sgl-project/sglang](https://github.com/sgl-project/sglang)** <a href="https://github.com/sgl-project/sglang/stargazers"><img src="https://img.shields.io/github/stars/sgl-project/sglang?style=social" alt="GitHub stars"/></a>
+  - **Fast execution engine for LLMs and vision-language models.** Apache-2.0 licensed. High-performance RadixAttention KV cache reuse, structured output decoding, deep optimization for complex multi-turn workflows.
+
+- **[huggingface/text-generation-inference](https://github.com/huggingface/text-generation-inference)** <a href="https://github.com/huggingface/text-generation-inference/stargazers"><img src="https://img.shields.io/github/stars/huggingface/text-generation-inference?style=social" alt="GitHub stars"/></a>
+  - **Hugging Face's enterprise LLM serving toolkit.** Apache-2.0 licensed. Features Rust scheduling, OpenTelemetry tracing, bitsandbytes quantization, SSE token streaming.
+
+---
+
+### 🗣️ Speech Recognition (ASR) & Voice Synthesis (TTS)
+
+- **[ggerganov/whisper.cpp](https://github.com/ggerganov/whisper.cpp)** <a href="https://github.com/ggerganov/whisper.cpp/stargazers"><img src="https://img.shields.io/github/stars/ggerganov/whisper.cpp?style=social" alt="GitHub stars"/></a>
+  - **High-performance C/C++ port of OpenAI Whisper.** MIT licensed. Light footprint, cross-platform execution on iOS, Android, macOS Metal, Linux, and Windows edge devices.
+
+- **[RVC-Boss/GPT-SoVITS](https://github.com/RVC-Boss/GPT-SoVITS)** <a href="https://github.com/RVC-Boss/GPT-SoVITS/stargazers"><img src="https://img.shields.io/github/stars/RVC-Boss/GPT-SoVITS?style=social" alt="GitHub stars"/></a>
+  - **Powerful zero-shot & few-shot TTS voice cloning framework.** MIT licensed. Requires only 5 seconds of audio reference for cross-lingual voice synthesis and emotion transfer.
+
+- **[coqui-ai/TTS](https://github.com/coqui-ai/TTS)** <a href="https://github.com/coqui-ai/TTS/stargazers"><img src="https://img.shields.io/github/stars/coqui-ai/TTS?style=social" alt="GitHub stars"/></a>
+  - **Deep learning toolkit for Text-to-Speech synthesis.** MPL-2.0 licensed. Includes XTTS-v2 for multi-speaker voice cloning in 16+ languages (community-maintained fork).
+
+- **[OpenBMB/VoxCPM](https://github.com/OpenBMB/VoxCPM)** <a href="https://github.com/OpenBMB/VoxCPM/stargazers"><img src="https://img.shields.io/github/stars/OpenBMB/VoxCPM?style=social" alt="GitHub stars"/></a>
+  - **Multilingual TTS & Voice Design engine.** Apache-2.0 licensed. Supports 30 languages + 9 Chinese dialects, prompt-driven voice design, 48kHz output, low 1.68% WER.
+
+- **[SYSTRAN/faster-whisper](https://github.com/SYSTRAN/faster-whisper)** <a href="https://github.com/SYSTRAN/faster-whisper/stargazers"><img src="https://img.shields.io/github/stars/SYSTRAN/faster-whisper?style=social" alt="GitHub stars"/></a>
+  - **Production-standard speech recognition with CTranslate2 engine.** MIT licensed. Re-implemented OpenAI Whisper with up to 4x speedup, 8-bit quantization, 3.12% WER.
+
+- **[m-bain/whisperX](https://github.com/m-bain/whisperX)** <a href="https://github.com/m-bain/whisperX/stargazers"><img src="https://img.shields.io/github/stars/m-bain/whisperX?style=social" alt="GitHub stars"/></a>
+  - **Whisper speech recognition with word-level alignment & speaker diarization.** MIT licensed. Features PyAnnote speaker identification for complex multi-speaker audio.
+
+---
+
+### 🖼️ Computer Vision, Image & Video Processing
+
+- **[huggingface/transformers](https://github.com/huggingface/transformers)** <a href="https://github.com/huggingface/transformers/stargazers"><img src="https://img.shields.io/github/stars/huggingface/transformers?style=social" alt="GitHub stars"/></a>
+  - **State-of-the-art Machine Learning library for PyTorch, TensorFlow, and JAX.** Apache-2.0 licensed. Unified API for vision models (ViT, DETR, SAM), LLMs, and audio pipeline execution.
+
+- **[AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui)** <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/stargazers"><img src="https://img.shields.io/github/stars/AUTOMATIC1111/stable-diffusion-webui?style=social" alt="GitHub stars"/></a>
+  - **Modular browser interface for Stable Diffusion models.** AGPL-3.0 licensed. Advanced image generation, upscaling, inpainting, ControlNet, and custom REST API endpoints.
+
+- **[comfyanonymous/ComfyUI](https://github.com/comfyanonymous/ComfyUI)** <a href="https://github.com/comfyanonymous/ComfyUI/stargazers"><img src="https://img.shields.io/github/stars/comfyanonymous/ComfyUI?style=social" alt="GitHub stars"/></a>
+  - **Modular node-based GUI & backend engine for Stable Diffusion & Flux.** GPL-3.0 licensed. Asynchronous execution graph, custom API pipelines, low VRAM optimization.
+
+- **[Anishrkhadka/restore-lab](https://github.com/Anishrkhadka/restore-lab)** <a href="https://github.com/Anishrkhadka/restore-lab/stargazers"><img src="https://img.shields.io/github/stars/Anishrkhadka/restore-lab?style=social" alt="GitHub stars"/></a>
+  - **GPU-accelerated restoration workbench for images and video.** Spatial 4x upscaling with Real-ESRGAN, GFPGAN face enhancement, NVENC encoding pipeline.
+
+- **[Motasaith/ai-image-restorer](https://github.com/Motasaith/ai-image-restorer)** <a href="https://github.com/Motasaith/ai-image-restorer/stargazers"><img src="https://img.shields.io/github/stars/Motasaith/ai-image-restorer?style=social" alt="GitHub stars"/></a>
+  - **Production-grade AI image restoration engine.** Real-ESRGAN super resolution, GFPGAN face restoration, async queue microservices, dual-port REST API & dashboard.
+
+---
+
+### 🤖 AI Applications & Orchestration Interfaces
+
+- **[open-webui/open-webui](https://github.com/open-webui/open-webui)** <a href="https://github.com/open-webui/open-webui/stargazers"><img src="https://img.shields.io/github/stars/open-webui/open-webui?style=social" alt="GitHub stars"/></a>
+  - **User-friendly AI web interface for local & cloud models.** MIT licensed. Built-in RAG document parsing, RBAC user permissions, OpenAI API compatibility, offline operation.
+
+---
+
+## 📊 Market Analysis & Sector Fragmentation
+
+```mermaid
+flowchart TD
+    A["Applied AI Ecosystem (2026)"] --> B["Cloud SaaS Platforms<br/>(Concentrated Hyperscalers)"]
+    A --> C["Open-Source Inference Layer<br/>(Fragmented Specialist Frameworks)"]
+    
+    B --> B1["Microsoft Azure AI (~3.1T Market Cap)"]
+    B --> B2["Google Cloud AI (~2.1T Market Cap)"]
+    B --> B3["AWS AI Services (~2.0T Market Cap)"]
+    
+    C --> C1["LLM Serving: vLLM, llama.cpp, Ollama"]
+    C --> C2["Speech Intelligence: Faster-Whisper, VoxCPM2"]
+    C --> C3["Vision & Multimodal: ComfyUI, Transformers"]
+```
+
+> 📌 **Key Takeaway**: Organizations seeking maximum enterprise reliability and managed SLAs favor **Hyperscaler SaaS APIs**. Conversely, engineering teams requiring **data sovereignty, zero latency overhead, or cost efficiency at scale** choose self-hosted engines like **vLLM** (high concurrency), **llama.cpp** (edge deployment), and **Faster-Whisper** (speech transcription).
+
+---
+
+## 🤝 How to Contribute
+
+Contributions are welcome! Please follow these simple steps:
+
+1. **Fork** the repository on GitHub.
+2. Edit `README.md` to add new SaaS platforms or open-source inference repositories.
+3. Ensure entries include clear description, links, specific pricing, and valid open-source star badges.
+4. Submit a **Pull Request** with a brief summary of additions.
+
+For more awesome open-source curations, check out [Awesome-Awesome-Awesome](https://github.com/ishandutta2007/Awesome-Awesome-Awesome)! ⭐
+
+---
+
+## 💖 Support & Sponsor
+
+If you find this curated list of Applied AI APIs & open-source serving frameworks helpful, please consider supporting the project:
+
+- ⭐ **Star** this repository on GitHub
+- 🔀 **Fork** and share with your team or community
+- ☕ **Buy me a coffee / Sponsor**: Show your appreciation on the [GitHub Sponsor Dashboard](https://github.com/sponsors/ishandutta2007)
+
+Thank you for supporting open-source software and applied AI research! 🙌
+
+---
+
+## ⭐ Star History
+
+[![Star History Chart](https://star-history.dera.page/svg?repos=ishandutta2007/Awesome-Applied-AI-APIS&type=date&legend=top-left)](https://star-history.dera.page/#ishandutta2007/Awesome-Applied-AI-APIS&type=date&legend=top-left)
+
+---
+
+## ⚠️ Disclaimer
+
+- This is a community-curated directory intended for educational and architectural reference.
+- Product features, cloud pricing tiers, and API rates change frequently; verify current pricing on official platform vendor sites.
+- Review security compliance and data privacy standards (GDPR, HIPAA) prior to sending sensitive audio or text to third-party hosted APIs.
+
+---
+
+<div align="center">
+  <b>Made with ❤️ for AI Engineers, ML Ops Teams & Application Developers</b>
+</div>
